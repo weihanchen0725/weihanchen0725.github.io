@@ -1,0 +1,48 @@
+.navbar{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-header{
+        border-bottom: 1px solid lightslategray
+    }
+    &-title{
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+    }
+
+    &-list{
+        display: inherit;
+        flex-direction: inherit;
+        list-style-type: none;
+    }
+
+    &-listitem{
+        display: inherit;
+        flex-direction: inherit;
+        align-items: center;
+        padding-left: .5rem;
+        min-width: 6rem;
+
+        &-link{
+            display: inherit;
+            flex-direction: inherit;
+            text-decoration: none;
+            color: unset;
+
+            &:hover{
+                text-decoration: underline;
+                color: lightblue;
+            }
+        }
+        &-icon{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+

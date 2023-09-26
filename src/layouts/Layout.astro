@@ -2,8 +2,11 @@
 interface Props {
 	title: string;
 }
-
+import 'normalize.css';
+import '../styles/navbar.scss';
+import '../styles/footer.scss';
 const { title } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -34,8 +37,15 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		min-height: 100vh;
+	}
+	body{
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		padding: 0px 5rem;
+		min-height: inherit;
+		max-width: 67.5rem;
 	}
 	code {
 		font-family:

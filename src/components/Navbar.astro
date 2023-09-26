@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon";
+
+const { importedData } = Astro.props;
+const { icon, title, href} = importedData;
+---
+<header class="navbar-header">
+    <nav class="navbar">
+        <h1 class="navbar-title">Wei Han Chen</h1>
+        <ul class="navbar-list">
+            {importedData.map((d:any) =>(
+                <a class="navbar-listitem-link" href={d.href}>
+                    <li class="navbar-listitem">
+                        <Icon class="navbar-listitem-icon" name={d.icon} />
+                        {d.title}
+                    </li>
+                </a>
+            ))}
+        </ul>
+    </nav>
+</header>
