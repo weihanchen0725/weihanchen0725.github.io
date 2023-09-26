@@ -1,0 +1,16 @@
+[
+    {
+        "title":"About",
+        "href":"#about",
+        "icon":"mdi:about-circle-outline"
+    },{
+        "title":"Projects",
+        "href":"#projects",
+        "icon":"fluent:apps-16-filled"
+    },
+    {
+        "title":"Contacts",
+        "href":"#contacts",
+        "icon":"fluent:contact-card-24-regular"
+    }
+]
