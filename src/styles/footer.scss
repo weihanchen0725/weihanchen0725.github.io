@@ -1,3 +1,33 @@
-footer{
+.social{
     margin-bottom:1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &-group{
+        list-style-type: none;
+        display: inherit;
+        flex-direction: inherit;
+        align-items: inherit;
+    }
+    &-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 6rem;
+        padding-left: .5rem;
+
+        &-link{
+            text-decoration: none;
+            color: black;
+            font-size: 1.25rem;
+
+            &:hover{
+                text-decoration: underline;
+                color: lightblue;
+            }
+        }
+    }
 }

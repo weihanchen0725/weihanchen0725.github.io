@@ -1,0 +1,16 @@
+[
+    {
+        "title":"Email",
+        "href":"weihanchen0725@gmail.com",
+        "icon":"ic:outline-email"
+    },{
+        "title":"Linkedin",
+        "href":"https://www.linkedin.com/in/weihanchen0725",
+        "icon":"mdi:linkedin"
+    },
+    {
+        "title":"Github",
+        "href":"https://github.com/weihanchen0725",
+        "icon":"mdi:github"
+    }
+]

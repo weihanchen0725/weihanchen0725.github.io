@@ -8,40 +8,35 @@
     &-header{
         border-bottom: 1px solid lightslategray
     }
-    &-title{
-        user-select: none;
-        -ms-user-select: none;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-    }
 
     &-list{
         display: inherit;
         flex-direction: inherit;
         list-style-type: none;
+        flex: 1 1 0;
     }
 
     &-listitem{
         display: inherit;
         flex-direction: inherit;
         align-items: center;
-        padding-left: .5rem;
+        justify-content: center;
         min-width: 6rem;
+        flex: 1 1 auto;
 
         &-link{
             display: inherit;
             flex-direction: inherit;
+            align-items: center;
             text-decoration: none;
+            font-weight: bolder;
+            font-size: 1.25rem;
             color: unset;
 
             &:hover{
                 text-decoration: underline;
                 color: lightblue;
             }
-        }
-        &-icon{
-            width: 1.5rem;
-            height: 1.5rem;
         }
     }
 }

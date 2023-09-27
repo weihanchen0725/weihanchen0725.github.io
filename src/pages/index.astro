@@ -2,21 +2,62 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Navbar from '../components/Navbar.astro';
-import data from '../data/navbar.json'
+import navbarData from '../data/navbar.json'
 import Footer from '../components/Footer.astro'
+import footerData from '../data/footer.json'
 ---
 
 <Layout title="Welcome to Astro.">
-	<Navbar importedData={data}/>
+	<Navbar importedData={navbarData}/>
 	<main>
-		<h1>Welcome to <span class="text-gradient">didiWei's portfolio!</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		
+		<section>
+			<h1>
+				<a href="#">Hello, I am Wei Han Chen.</a>
+			</h1>
+			</a>
+		</section>
+		<section id="about">
+			<h3>
+				<a href="#about">This section is for About.</a>
+			</h3>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit assumenda facilis ab mollitia fugiat quod blanditiis non, illo, facere totam ipsam iure dolorem repellat saepe ullam rem deserunt reiciendis? Labore?
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora laboriosam recusandae amet, qui, laudantium enim quod sint expedita voluptate deleniti delectus numquam voluptatem cum unde eaque distinctio illum accusantium sed.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus deleniti quisquam neque recusandae possimus excepturi inventore dolore, praesentium animi cupiditate unde ab illum natus officiis! Excepturi iste accusantium accusamus delectus.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam quidem quo quae dolorum quia aperiam doloribus corporis itaque veniam iure placeat aliquid, dignissimos quos? Unde eius fugiat deserunt praesentium?
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi blanditiis reiciendis laborum consequatur? Iusto odit reprehenderit enim sunt totam ipsam debitis recusandae soluta commodi provident error, aut saepe deleniti.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim illum fuga, consequatur nostrum tenetur voluptatibus minima quaerat quasi quod voluptates reprehenderit illo, dignissimos optio natus necessitatibus pariatur excepturi fugit incidunt.
+			</p>
+		</section>
+		<section id="projects">
+			
+			<h3>
+				<a href="#projects">This section is for Projects.</a>
+			</h3>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit assumenda facilis ab mollitia fugiat quod blanditiis non, illo, facere totam ipsam iure dolorem repellat saepe ullam rem deserunt reiciendis? Labore?
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora laboriosam recusandae amet, qui, laudantium enim quod sint expedita voluptate deleniti delectus numquam voluptatem cum unde eaque distinctio illum accusantium sed.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus deleniti quisquam neque recusandae possimus excepturi inventore dolore, praesentium animi cupiditate unde ab illum natus officiis! Excepturi iste accusantium accusamus delectus.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam quidem quo quae dolorum quia aperiam doloribus corporis itaque veniam iure placeat aliquid, dignissimos quos? Unde eius fugiat deserunt praesentium?
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi blanditiis reiciendis laborum consequatur? Iusto odit reprehenderit enim sunt totam ipsam debitis recusandae soluta commodi provident error, aut saepe deleniti.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim illum fuga, consequatur nostrum tenetur voluptatibus minima quaerat quasi quod voluptates reprehenderit illo, dignissimos optio natus necessitatibus pariatur excepturi fugit incidunt.
+			</p>
+		</section>
+		<section id="contacts">
+			<h3>
+				<a href="#contacts">This section is for Contacts.</a>
+			</h3>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit assumenda facilis ab mollitia fugiat quod blanditiis non, illo, facere totam ipsam iure dolorem repellat saepe ullam rem deserunt reiciendis? Labore?
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora laboriosam recusandae amet, qui, laudantium enim quod sint expedita voluptate deleniti delectus numquam voluptatem cum unde eaque distinctio illum accusantium sed.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus deleniti quisquam neque recusandae possimus excepturi inventore dolore, praesentium animi cupiditate unde ab illum natus officiis! Excepturi iste accusantium accusamus delectus.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit aliquam quidem quo quae dolorum quia aperiam doloribus corporis itaque veniam iure placeat aliquid, dignissimos quos? Unde eius fugiat deserunt praesentium?
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi blanditiis reiciendis laborum consequatur? Iusto odit reprehenderit enim sunt totam ipsam debitis recusandae soluta commodi provident error, aut saepe deleniti.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim illum fuga, consequatur nostrum tenetur voluptatibus minima quaerat quasi quod voluptates reprehenderit illo, dignissimos optio natus necessitatibus pariatur excepturi fugit incidunt.
+			</p>
+		</section>
 	</main>
-	<Footer />
+	<Footer importedData={footerData}/>
 </Layout>
 
 <style>
@@ -29,37 +70,20 @@ import Footer from '../components/Footer.astro'
 		font-size: 20px;
 		line-height: 1.6;
 	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-		
+	h1 a[href^="#"]::before, h3 a[href^="#"]::before{
+		content: "#";
+		visibility: hidden;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	h1 a[href^="#"]:hover::before, h3 a[href^="#"]:hover::before{
+		visibility: :visible;
 	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
+
+	h1 a, h3 a{
+		color:black;
+		text-decoration: none;
 	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
+	h1 a:hover, h1 a:focus, h3 a:hover, h3 a:focus{
+		text-decoration: underline;
 	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
+	
 </style>

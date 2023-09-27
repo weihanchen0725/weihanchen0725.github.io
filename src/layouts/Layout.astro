@@ -4,6 +4,7 @@ interface Props {
 }
 import 'normalize.css';
 import '../styles/navbar.scss';
+import '../styles/general.scss';
 import '../styles/footer.scss';
 const { title } = Astro.props;
 
@@ -24,6 +25,16 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@font-face{
+		font-family: 'Roboto';
+		src: url('/fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: normal;
+		font-smoothing: auto;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+	}
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -36,7 +47,7 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: Roboto, system-ui, sans-serif;
 		min-height: 100vh;
 	}
 	body{
@@ -58,4 +69,6 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
+	
+	
 </style>

@@ -1,11 +1,18 @@
 ---
+import { Icon } from "astro-icon";
 
+const { importedData } = Astro.props;
+const { icon, title, href} = importedData;
 ---
-<footer>
-    <ul>
-        <li>Linkedin: </li>
-        <li>Email: </li>
-        <li>Github: </li>
+<footer class="social">
+    <ul class="social-group">
+        {importedData.map((d:any) => (
+            <a class="social-item-link" href={d.href}>
+                <li class="social-item">
+                    <Icon class="icon" name={d.icon} />
+                    {d.title}
+                </li>
+            </a>
+        ))}
     </ul>
-    This is the footer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deserunt! Deserunt debitis in dolor harum ipsa maiores animi alias. Veniam vel autem placeat magni sequi enim quasi quis eius explicabo.
 </div>
