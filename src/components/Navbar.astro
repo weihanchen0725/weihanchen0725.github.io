@@ -6,7 +6,10 @@ const { icon, title, href} = importedData;
 ---
 <header class="navbar-header">
     <nav class="navbar">
-        <ul class="navbar-list">
+        <span class="navbar-toggle icon" id="menuToggle">
+            <Icon name="fad:h-expand" />
+        </span>
+        <ul class="navbar-list" id="menuList">
             {importedData.map((d:any) =>(
                     <li class="navbar-listitem">
                         <a class="navbar-listitem-link" href={d.href}>
@@ -18,3 +21,18 @@ const { icon, title, href} = importedData;
         </ul>
     </nav>
 </header>
+<script>
+    const screenSize = 1024;
+    const menuToggle = document.getElementById("menuToggle");
+    const menuList = document.getElementById("menuList");
+
+    (() => {
+        window.addEventListener('resize', () =>{
+            if(window.innerWidth > screenSize) if(menuList?.classList.contains("active-flex")) menuList.classList.remove("active-flex");
+        });
+        
+    })();
+
+    menuToggle?.addEventListener('click',() => { menuList?.classList.toggle("active-flex"); });
+
+</script>

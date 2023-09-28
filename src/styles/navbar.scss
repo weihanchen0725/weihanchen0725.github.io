@@ -1,43 +1,72 @@
+@import '_generalUtilities';
+
+$medium-screen: 64rem;
+
 .navbar{
+    @include custom-flex(row, space-between, center);
     position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+    @media screen and (max-width: $medium-screen){
+        @include custom-flex(column, center, center);
+        &-list{
+            @include custom-flex(column, center, center);
+            @include width-fit;
+            @include hide;
+            padding: 0px;
+            margin: 0px;
+
+            &item{
+                padding: .5rem 0rem;
+                @include width-fit;
+            }
+        }
+        &-toggle{
+            @include flex;
+        }
+    }
+
+    &-toggle{
+        display: none;
+        border: .125rem solid black;
+        border-radius: .25rem;
+        padding: .25rem;
+        margin: calc(1rem - .25rem - .125rem) 0rem;
+        cursor: pointer;
+
+        &:hover{
+            background-color: lightgray;
+        }
+    }
     &-header{
         border-bottom: 1px solid lightslategray
     }
 
     &-list{
-        display: inherit;
-        flex-direction: inherit;
+        @include custom-flex(null, center, center);
         list-style-type: none;
         flex: 1 1 0;
-    }
 
-    &-listitem{
-        display: inherit;
-        flex-direction: inherit;
-        align-items: center;
-        justify-content: center;
-        min-width: 6rem;
-        flex: 1 1 auto;
-
-        &-link{
-            display: inherit;
-            flex-direction: inherit;
-            align-items: center;
-            text-decoration: none;
-            font-weight: bolder;
-            font-size: 1.25rem;
-            color: unset;
-
-            &:hover{
-                text-decoration: underline;
-                color: lightblue;
+        &item{
+            @include custom-flex(row, center, center);
+            min-width: 6rem;
+            flex: 1 1 auto;
+    
+            &-link{
+                @include custom-flex(row, center, center);
+                text-decoration: none;
+                font-weight: bolder;
+                font-size: 1.25rem;
+                color: unset;
+    
+                &:hover{
+                    text-decoration: underline;
+                    color: lightblue;
+                }
             }
         }
     }
+
+    
 }
 
