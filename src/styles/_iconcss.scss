@@ -1,0 +1,11 @@
+$icon-w: 1.5rem;
+$icon-h: 1.5rem;
+
+@mixin custom-icon{
+    min-width: $icon-w;
+    width: $icon-w;
+    max-width: $icon-w;
+    min-height: $icon-h;
+    height: $icon-h;
+    max-height: $icon-h;
+}

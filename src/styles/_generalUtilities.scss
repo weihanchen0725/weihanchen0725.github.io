@@ -1,0 +1,24 @@
+$fit: fit-content;
+$moz-fit: -moz-available;
+$web-fit: -webkit-fill-available;
+
+@mixin custom-flex($row-or-col, $js-start-center-end, $ai-start-center-end-between){
+    display: flex;
+    flex-direction: $row-or-col;
+    justify-content: $js-start-center-end;
+    align-items: $ai-start-center-end-between;
+}
+
+
+@mixin width-fit{
+    width: $fit;
+    width: $moz-fit;
+    width: $web-fit;
+}
+
+@mixin hide{
+    display:none !important;
+}
+@mixin flex{
+    display:flex !important;
+}

@@ -68,22 +68,24 @@ import footerData from '../data/footer.json'
 		max-width: calc(100% - 2rem);
 		color: lightgray;
 		font-size: 20px;
-		line-height: 1.6;
 	}
 	h1 a[href^="#"]::before, h3 a[href^="#"]::before{
+		display: inline-block;
+		width: 1rem;
 		content: "#";
+		text-decoration: underline;
 		visibility: hidden;
+		font-size: 1.25rem;
+		margin-left: -1rem;
+
 	}
 	h1 a[href^="#"]:hover::before, h3 a[href^="#"]:hover::before{
-		visibility: :visible;
+		visibility: visible;
 	}
 
 	h1 a, h3 a{
 		color:black;
 		text-decoration: none;
-	}
-	h1 a:hover, h1 a:focus, h3 a:hover, h3 a:focus{
-		text-decoration: underline;
 	}
 	
 </style>

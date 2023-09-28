@@ -1,4 +1,17 @@
+@import 'generalUtilities';
+@import 'iconcss';
+
 .icon{
-    width: 1.5rem;
-    height: 1.5rem;
+    @include custom-icon;
+}
+
+.active{
+    display: inline-block;
+}
+.hide{
+    @include hide;
+}
+
+.active-flex{
+    @include flex;
 }
