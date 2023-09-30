@@ -13,6 +13,7 @@
     "@astrojs/solid-js": "^3.0.1",
     "astro": "^3.0.12",
     "astro-icon": "^0.8.1",
+    "node": "^20.7.0",
     "normalize.css": "^8.0.1",
     "solid-js": "^1.7.11"
   },
