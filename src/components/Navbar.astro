@@ -5,10 +5,14 @@ const { importedData } = Astro.props;
 const { icon, title, href} = importedData;
 ---
 <header class="navbar-header">
+    <canvas class="navbar-header-canvas"></canvas>
     <nav class="navbar">
-        <span class="navbar-toggle icon" id="menuToggle">
+        <div class="navbar-twrapper">
+            <span class="navbar-title" id="menuTitle"><Icon name="bi:badge-wc" /></span>
+            <span class="navbar-toggle icon" id="menuToggle">
             <Icon name="fad:h-expand" />
         </span>
+        </div>
         <ul class="navbar-list" id="menuList">
             {importedData.map((d:any) =>(
                     <li class="navbar-listitem">
@@ -20,8 +24,59 @@ const { icon, title, href} = importedData;
             ))}
         </ul>
     </nav>
+
 </header>
 <script>
+
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+    const canvas = document.querySelector("canvas");
+    const nav = document.querySelector("nav");
+
+
+    const initHeader = () => {
+        if(canvas){
+        canvas.height = height;
+        canvas.width = width;
+    }else{
+        console.log("Canvas is not found")
+    }
+    
+    }
+    initHeader();
+    
+    const resize = () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        if(canvas){
+
+            canvas.width = width;
+        canvas.height = height;
+        }
+    }
+    
+    const originalHeight = nav.offsetHeight + nav.offsetTop;
+
+    const scroll = () => {
+        if(nav){
+            if(window.scrollY >= originalHeight){
+                // const percentage = window.scrollY/originalHeight;
+                const percentage = (((window.scrollY-originalHeight)/nav.offsetHeight*100)-100 >= 0 ) ? 0 : ((window.scrollY-originalHeight)/nav.offsetHeight*100)-100;
+                nav.classList.add("top");
+                nav.setAttribute("style",`transform:translateY(${percentage}%);`);
+            }else{
+                const percentage = 0;
+                nav.classList.remove("top");
+                nav.style.removeProperty("transform");
+                //nav.setAttribute("style",`transform:translateY(${percentage}%);`);
+            }
+        }
+    else{
+
+    }
+        
+    }
+
     const screenSize = 1024;
     const menuToggle = document.getElementById("menuToggle");
     const menuList = document.getElementById("menuList");
@@ -35,4 +90,10 @@ const { icon, title, href} = importedData;
 
     menuToggle?.addEventListener('click',() => { menuList?.classList.toggle("active-flex"); });
 
+
+    const addEventListeners = () =>{
+        window.addEventListener('resize', resize);
+        window.addEventListener('scroll', scroll);
+    }
+    addEventListeners();
 </script>

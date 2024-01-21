@@ -2,10 +2,32 @@
 
 $medium-screen: 64rem;
 
+@keyframes top-down
+{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+@keyframes down-top 
+{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-100%);
+    }
+}
+
+
 .navbar{
     @include custom-flex(row, space-between, center);
-    position: relative;
-    width: 100%;
+    color: white;
+    position: absolute;
+    width: 800px;
+    // max-width: calc(100% - 2rem);
 
     @media screen and (max-width: $medium-screen){
         @include custom-flex(column, center, center);
@@ -24,11 +46,18 @@ $medium-screen: 64rem;
         &-toggle{
             @include flex;
         }
+        &-twrapper{
+            width: 100%;
+        }
+        
     }
-
+    &-twrapper{
+        @include custom-flex(row, space-between, center);
+        
+    }
     &-toggle{
         display: none;
-        border: .125rem solid black;
+        border: .125rem solid white;
         border-radius: .25rem;
         padding: .25rem;
         margin: calc(1rem - .25rem - .125rem) 0rem;
@@ -39,11 +68,24 @@ $medium-screen: 64rem;
         }
     }
     &-header{
-        border-bottom: 1px solid lightslategray
+        @include custom-flex(row, center, flex-end);
+        position: relative;
+        background-image: url("/src/assets/background-coffee.jpg");
+            background-size: cover;
+            background-position: center center;
+        border-bottom: 1px solid lightslategray;
+
+        &-canvas{
+            position: relative;
+            background: #333;
+            opacity: 50%
+            
+        }
     }
 
     &-list{
         @include custom-flex(null, center, center);
+        
         list-style-type: none;
         flex: 1 1 0;
 
@@ -66,7 +108,27 @@ $medium-screen: 64rem;
             }
         }
     }
+    &-title{
+        & svg{
+            width: 3rem;
 
-    
+        }
+    }
+
+    &.top{
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        
+    }
+
+    &.topdown{
+        animation: top-down 1s ease-in-out;
+    }
+    &.downtop{
+        animation: down-top 1s ease-in-out;
+    }
 }
 
