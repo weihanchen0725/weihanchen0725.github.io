@@ -1,8 +1,15 @@
 
 @import '_generalUtilities';
 
+$medium-screen: 64rem;
+
 .social{
     @include custom-flex(row, center, center);
+    @media screen and (max-width: $medium-screen){
+        &-group{
+            padding-left: 0 !important;
+        }
+    }
     margin-bottom:1rem;
     &-group{
         @include custom-flex(row, center, center);
