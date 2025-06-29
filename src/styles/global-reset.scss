@@ -1,0 +1,94 @@
+// 1. Set box-sizing globally
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// 2. Remove default margin and padding
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Set core body defaults
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Roboto Variable', 'Roboto', system-ui, sans-serif;
+  background-color: #fff;
+  color: #111;
+  font-size: 1rem; // 16px base
+  padding: 0; // Ensure no default padding
+}
+
+// 4. Remove list styles on ul, ol elements with a list role
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// 5. Anchor defaults
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+// 6. Remove default button styles
+button, input, select, textarea {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+}
+
+// 7. Images and media
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// 8. Remove animations and transitions for people who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// 9. Remove all animations/transitions on page load (optional, for accessibility)
+// html:focus-within {
+//   scroll-behavior: smooth;
+// }
+
+// 10. Set base font size for rem units
+html {
+  font-size: 16px; // 1rem = 16px
+}
+
+// 11. Remove default table spacing
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// 12. Inherit fonts for form elements
+input, button, textarea, select {
+  font: inherit;
+}
+
+// 13. Remove outline for non-keyboard users (optional, for accessibility)
+// :focus:not(:focus-visible) {
+//   outline: none;
+// }
