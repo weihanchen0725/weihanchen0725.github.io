@@ -6,7 +6,11 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), solid(), icon()],
+  integrations: [
+    react({ include: ['src/components/react/**/*.{jsx,tsx}'] }),
+    solid({ include: ['src/components/solid/**/*.{jsx,tsx}'] }),
+    icon(),
+  ],
   site: 'https://weihanchen0725.github.io/',
   base: '.',
 });

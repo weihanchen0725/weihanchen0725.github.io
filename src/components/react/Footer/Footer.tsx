@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
         >
           LinkedIn
         </a>
-        <a href="mailto:your.email@example.com" className="footer__link">
+        <a href="mailto:weihanchen0725@gmail.com" className="footer__link">
           Email
         </a>
       </nav>

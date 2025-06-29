@@ -4,7 +4,9 @@ import '../styles/global-reset.scss';
 import '../styles/index.scss';
 import Header from '../components/react/Header/Header.tsx';
 import Footer from '../components/react/Footer/Footer.tsx';
-import { Icon } from 'astro-icon/components';
+
+import { getCollection } from 'astro:content';
+const profileData = await getCollection('portfolio');
 ---
 
 <html lang="en">
@@ -31,8 +33,6 @@ import { Icon } from 'astro-icon/components';
     <main class="main-content">
       <section class="intro-section">
         <h1 class="intro-title">👋 Hi, I'm Wei-Han</h1>
-        <Icon name="mdi:github" size="24" />
-
         <p class="intro-subtitle">
           Software Engineer | Open Source Enthusiast | Lifelong Learner
         </p>
@@ -40,6 +40,9 @@ import { Icon } from 'astro-icon/components';
           Welcome to my portfolio! Here you'll find my projects, blog posts, and
           more about my journey in tech.
         </p>
+      </section>
+      <section>
+        {profileData.map((p) => <p>{p.data.description}</p>)}
       </section>
     </main>
     <Footer client:load />
