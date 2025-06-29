@@ -32,6 +32,8 @@ body {
   color: #111;
   font-size: 1rem; // 16px base
   padding: 0; // Ensure no default padding
+  display: flex; // Use flexbox for layout
+  flex-direction: column; // Stack children vertically
 }
 
 // 4. Remove list styles on ul, ol elements with a list role

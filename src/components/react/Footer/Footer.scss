@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 1.5rem 1rem;
+  background: #fafbfc;
+  border-top: 1px solid #ececec;
+  font-size: 1rem;
+  color: #888;
+
+  &__text {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #888;
+    letter-spacing: 0.01em;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus {
+      color: #222;
+      text-decoration: underline;
+    }
+  }
+}
