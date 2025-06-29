@@ -31,19 +31,22 @@ const profileData = await getCollection('portfolio');
   <body>
     <Header client:load />
     <main class="main-content">
-      <section class="intro-section">
-        <h1 class="intro-title">👋 Hi, I'm Wei-Han</h1>
-        <p class="intro-subtitle">
-          Software Engineer | Open Source Enthusiast | Lifelong Learner
-        </p>
-        <p class="intro-description">
-          Welcome to my portfolio! Here you'll find my projects, blog posts, and
-          more about my journey in tech.
-        </p>
-      </section>
-      <section>
-        {profileData.map((p) => <p>{p.data.description}</p>)}
-      </section>
+      {
+        profileData.map((p) => (
+          <section class="intro-section">
+            <h1 class="intro-title">{p.data.title}</h1>
+            <p class="intro-subtitle">{p.data.subtitle} </p>
+            <p class="intro-description">
+              {p.data.description.split('\n').map((line) => (
+                <>
+                  {line}
+                  <br />
+                </>
+              ))}
+            </p>
+          </section>
+        ))
+      }
     </main>
     <Footer client:load />
   </body>

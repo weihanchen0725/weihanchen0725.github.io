@@ -9,9 +9,8 @@ const portfolio = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/contents/portfolio' }),
   schema: z.object({
     title: z.string(),
-    date: z.date(),
+    subtitle: z.string(),
     description: z.string(),
-    featured: z.boolean().optional(),
   }),
 });
 
