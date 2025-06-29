@@ -1,6 +1,8 @@
 ---
 import '@fontsource-variable/roboto';
 import '../styles/global-reset.scss'
+import MyReactComponent from '../components/MyReactComponent.tsx';
+import MySolidComponent from '../components/MySolidComponent.tsx';
 ---
 
 <html lang="en">
@@ -13,5 +15,7 @@ import '../styles/global-reset.scss'
 	</head>
 	<body>
 		<h1>Wei Han</h1>
+		<MyReactComponent client:load />
+		<MySolidComponent client:load />
 	</body>
 </html>
