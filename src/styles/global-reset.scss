@@ -1,10 +1,23 @@
 // 1. Set box-sizing globally
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 // 2. Remove default margin and padding
-body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
   padding: 0;
 }
@@ -22,7 +35,8 @@ body {
 }
 
 // 4. Remove list styles on ul, ol elements with a list role
-ul[role='list'], ol[role='list'] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -36,7 +50,10 @@ a {
 }
 
 // 6. Remove default button styles
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
   margin: 0;
   padding: 0;
@@ -49,7 +66,11 @@ button, input, select, textarea {
 }
 
 // 7. Images and media
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
@@ -57,7 +78,9 @@ img, picture, video, canvas, svg {
 
 // 8. Remove animations and transitions for people who prefer reduced motion
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -84,7 +107,10 @@ table {
 }
 
 // 12. Inherit fonts for form elements
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 

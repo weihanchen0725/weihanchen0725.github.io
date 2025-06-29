@@ -1,21 +1,21 @@
 ---
 import '@fontsource-variable/roboto';
-import '../styles/global-reset.scss'
+import '../styles/global-reset.scss';
 import MyReactComponent from '../components/MyReactComponent.tsx';
 import MySolidComponent from '../components/MySolidComponent.tsx';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Wei-Han's Portfolio</title>
-	</head>
-	<body>
-		<h1>Wei Han</h1>
-		<MyReactComponent client:load />
-		<MySolidComponent client:load />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Wei-Han's Portfolio</title>
+  </head>
+  <body>
+    <h1>Wei Han</h1>
+    <MyReactComponent client:load />
+    <MySolidComponent client:load />
+  </body>
 </html>
