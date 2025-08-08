@@ -23,14 +23,21 @@ import Footer from '../components/react/Footer/Footer.tsx';
   <body>
     <Header client:load />
     <main class="main-content">
-      <section class="intro-section">
-        <h1 class="intro-title">Projects</h1>
-        <p class="intro-subtitle">
-          Software Engineer | Open Source Enthusiast | Lifelong Learner
+      <section class="projects-section">
+        <h2 class="projects-title">My Projects</h2>
+        <p class="projects-description">
+          Here are some of the projects I've worked on. Feel free to explore and reach out if you have any questions!
         </p>
-        <p class="intro-description">
-          Hello! I'm Wei-Han Chen, THIS IS PROJECTS PAGE        </p>
-      </section>
+        <!-- Example project card -->
+        <div class="project-card">
+          <h3 class="project-title">Movie Reviews</h3>
+          <p class="project-description">
+            A responsive movie-review platform built with React (TypeScript) that consumes The Movie Database (TMDb) API to let users search for films, submit ratings, and join real-time discussions.
+          </p>
+          <a href="https://weihanchen0725.github.io/movie-list/" class="project-link">View Project</a>
+        </div>
+        </section>
+        <!-- Repeat project cards as needed -->
       <!-- Add more sections here, such as Skills, Experience, or Education, as needed -->
     </main>
     <Footer client:load />
