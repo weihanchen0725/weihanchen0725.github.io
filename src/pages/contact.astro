@@ -1,38 +1,20 @@
 ---
-// filepath: /Users/wei/Repos/weihanchen0725.github.io/src/pages/about.astro
-import '@fontsource-variable/roboto';
-import '../styles/global-reset.scss';
-import '../styles/index.scss';
-import Header from '../components/react/Header/Header.tsx';
-import Footer from '../components/react/Footer/Footer.tsx';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="About Wei-Han Chen - Software engineer, open source enthusiast, and lifelong learner." />
-    <meta property="og:title" content="About | Wei-Han's Portfolio" />
-    <meta property="og:description" content="Learn more about Wei-Han Chen, a software engineer passionate about building and learning." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
-    <title>About | Wei-Han's Portfolio</title>
-  </head>
-  <body>
-    <Header client:load />
-    <main class="main-content">
-      <section class="intro-section">
-        <h1 class="intro-title">Contact</h1>
-        <p class="intro-subtitle">
-          Software Engineer | Open Source Enthusiast | Lifelong Learner
-        </p>
-        <p class="intro-description">
-          Hello! I'm Wei-Han Chen, THIS IS CONTACT PAGE        </p>
-      </section>
-      <!-- Add more sections here, such as Skills, Experience, or Education, as needed -->
-    </main>
-    <Footer client:load />
-  </body>
-</html>
+<BaseLayout 
+  title="Contact | Wei-Han's Portfolio"
+  description="Get in touch with Wei-Han Chen - Let's discuss opportunities, collaborations, or just say hello!"
+  ogTitle="Contact | Wei-Han's Portfolio"
+  ogDescription="Connect with Wei-Han Chen for opportunities, collaborations, or to discuss software engineering projects."
+>
+  <section class="intro-section">
+    <h1 class="intro-title">Contact</h1>
+    <p class="intro-subtitle">
+      Let's Connect and Build Something Amazing Together
+    </p>
+    <p class="intro-description">
+      Hello! I'm Wei-Han Chen, THIS IS CONTACT PAGE        </p>
+  </section>
+  <!-- Add more sections here, such as Skills, Experience, or Education, as needed -->
+</BaseLayout>

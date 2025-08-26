@@ -1,0 +1,45 @@
+---
+import '@fontsource-variable/roboto';
+import '../styles/global-reset.scss';
+import '../styles/index.scss';
+import Header from '../components/react/Header/Header.tsx';
+import Footer from '../components/react/Footer/Footer.tsx';
+
+export interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+}
+
+const { 
+  title, 
+  description, 
+  ogTitle = title, 
+  ogDescription = description, 
+  ogImage = "/og-image.png" 
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header client:load />
+    <main class="main-content">
+      <slot />
+    </main>
+    <Footer client:load />
+  </body>
+</html>
